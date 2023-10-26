@@ -74,3 +74,10 @@ require("lazy").setup({
     },
   },
 })
+
+vim.cmd([[
+  xmap gc <Plug>VSCodeCommentarygv
+  nmap gc <Plug>VSCodeCommentarygv
+  omap gc <Plug>VSCodeCommentarygv
+  nmap gcc <Plug>VSCodeCommentaryLine
+]])
