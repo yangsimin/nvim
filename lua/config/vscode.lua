@@ -81,6 +81,8 @@ vim.cmd([[
   nnoremap gc <Plug>VSCodeCommentarygv
   nnoremap gcc <Plug>VSCodeCommentaryLine
   xnoremap y y'>
+  nnoremap <LEADER><ESC> :nohlsearch<CR>
+  nnoremap <LEADER>rn <Cmd>call VSCodeCall('editor.action.rename')<CR>
 ]])
 
 
