@@ -80,24 +80,49 @@ vim.cmd([[
   xnoremap gc <Plug>VSCodeCommentarygv
   nnoremap gc <Plug>VSCodeCommentarygv
   nnoremap gcc <Plug>VSCodeCommentaryLine
-]])
+  ]])
 
 
 -- Commands(:)
--- x/wq     (close active tab)
--- xa/wqa   (close all tabs)
+-- x/wq     (save and close active tab)
+-- xa/wqa   (save and close all tabs)
 
 -- Keybindings
--- ZZ       (close active tab)
+-- ZZ       (save and close active tab)
 -- gt       (switch next tab)
 -- gT       (switch previous tab)
 -- gh       (show hover)
 -- gd       (go to definition)
 -- gD       (peek definition)
 -- <C-w>gd  (go to definition in new window)
+
 -- <C-i>    (navigate forward)
 -- <C-o>    (navigate back)
+
 -- M        (move cursor to middle)
+
 -- zz       (reveal center)
 -- zt       (reveal top)
 -- zb       (reveal bottom)
+
+-- <C-w>n   (split new window)
+-- <C-w>q   (close active tab)
+-- <C-w>s   (split editor dowm)
+-- <C-w>v   (split editor right)
+-- <C-w>o   (all editors in one)
+
+-- <C-w>=   (equally divide editor width)
+-- <C-w>_   (toggle editor width)
+-- <C-w>+   (increase editor height)
+-- <C-w>-   (decrease editor height)
+-- <C-w>>   (increase editor width)
+-- <C-w><   (decrease editor width)
+
+-- <C-w>j   (navigate down)
+-- <C-w>k   (navigate up)
+-- <C-w>h   (navigate left)
+-- <C-w>l   (navigate right)
+
+-- <C-w>w   (focus next window)
+-- <C-w>W   (focus previous window)
+-- <C-w>p   (focus previous window)
