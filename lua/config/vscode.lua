@@ -77,8 +77,27 @@ require("lazy").setup({
 })
 
 vim.cmd([[
-  xmap gc <Plug>VSCodeCommentarygv
-  nmap gc <Plug>VSCodeCommentarygv
-  omap gc <Plug>VSCodeCommentarygv
-  nmap gcc <Plug>VSCodeCommentaryLine
+  xnoremap gc <Plug>VSCodeCommentarygv
+  nnoremap gc <Plug>VSCodeCommentarygv
+  nnoremap gcc <Plug>VSCodeCommentaryLine
 ]])
+
+
+-- Commands(:)
+-- x/wq     (close active tab)
+-- xa/wqa   (close all tabs)
+
+-- Keybindings
+-- ZZ       (close active tab)
+-- gt       (switch next tab)
+-- gT       (switch previous tab)
+-- gh       (show hover)
+-- gd       (go to definition)
+-- gD       (peek definition)
+-- <C-w>gd  (go to definition in new window)
+-- <C-i>    (navigate forward)
+-- <C-o>    (navigate back)
+-- M        (move cursor to middle)
+-- zz       (reveal center)
+-- zt       (reveal top)
+-- zb       (reveal bottom)
