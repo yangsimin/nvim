@@ -80,7 +80,8 @@ vim.cmd([[
   xnoremap gc <Plug>VSCodeCommentarygv
   nnoremap gc <Plug>VSCodeCommentarygv
   nnoremap gcc <Plug>VSCodeCommentaryLine
-  ]])
+  xnoremap y y'>
+]])
 
 
 -- Commands(:)
