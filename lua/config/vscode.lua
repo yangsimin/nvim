@@ -45,7 +45,7 @@ require("lazy").setup({
           "tsx",
         },
         sync_install = false,
-        highlight = { enable = true },
+        highlight = { enable = false },
         indent = { enable = true },
         textobjects = {
           select = {
@@ -57,6 +57,7 @@ require("lazy").setup({
               ["aa"] = "@parameter.outer",
               ["ia"] = "@parameter.inner",
             },
+            include_surrounding_whitespace = true,
           },
         },
       })
