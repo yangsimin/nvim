@@ -83,6 +83,7 @@ vim.cmd([[
   xnoremap y y'>
   nnoremap <LEADER><ESC> :nohlsearch<CR>
   nnoremap <LEADER>rn <Cmd>call VSCodeCall('editor.action.rename')<CR>
+  inoremap <C-D> <Cmd>call VSCodeCall('editor.action.addSelectionToNextFindMatch')<CR>
 ]])
 
 
