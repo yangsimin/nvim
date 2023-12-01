@@ -91,23 +91,34 @@ vim.cmd([[
 -- x/wq     (save and close active tab)
 -- xa/wqa   (save and close all tabs)
 
--- Keybindings
+-- Keybindings(normal mode)
 -- ZZ       (save and close active tab)
+
 -- gt       (switch next tab)
 -- gT       (switch previous tab)
 -- gh       (show hover)
 -- gd       (go to definition)
 -- gD       (peek definition)
 -- <C-w>gd  (go to definition in new window)
+-- gR       (enter replace mode)
+-- gj       (move down in screen line)
+-- gk       (move up in screen line)
+-- g~       (反转大小写)
+-- gu       (转换为小写)
+-- gU       (转换为大写)
 
--- <C-i>    (navigate forward)
--- <C-o>    (navigate back)
+-- >>       (增加缩进)
+-- >G       (增加缩进到文档末尾)
+-- ==       (自动缩进)
 
 -- M        (move cursor to middle)
 
 -- zz       (reveal center)
 -- zt       (reveal top)
 -- zb       (reveal bottom)
+
+-- <C-i>    (navigate forward)
+-- <C-o>    (navigate back)
 
 -- <C-w>n   (split new window)
 -- <C-w>q   (close active tab)
@@ -130,3 +141,18 @@ vim.cmd([[
 -- <C-w>w   (focus next window)
 -- <C-w>W   (focus previous window)
 -- <C-w>p   (focus previous window)
+
+
+-- Keybindings(insert mode)
+-- <C-r>0   (paste text from the register 0)
+-- <C-r>=   (访问表达式寄存器)
+-- <C-h>    (same as backspace)
+-- <C-w>    (删除前一个单词)
+-- <C-u>    (删除至行首)
+-- <C-j>    (same as enter)
+-- <C-o>    (enter normal mode then back to insert mode)
+
+
+-- Keybindings(visual mode)
+-- gv       (重选上次的高亮选区)
+-- o        (切换高亮选区的活动端)
