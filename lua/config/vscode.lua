@@ -88,12 +88,16 @@ vim.cmd([[
 
 
 -- Commands(:)
--- x/wq     (save and close active tab)
--- xa/wqa   (save and close all tabs)
+-- x/wq       (save and close active tab)
+-- xa/wqa     (save and close all tabs)
+-- tabo[nly]  (只保留当前标签页，关闭其他标签页)
+-- changes    (查看修改记录列表)
 
 -- Keybindings(normal mode)
 -- W/E/B/gE (按字串移动)
 -- ZZ       (save and close active tab)
+-- (/)      (跳转到上一句/下一句开头)
+-- {/}      (跳转到上一段/下一段开头)
 
 -- gt       (switch next tab)
 -- gT       (switch previous tab)
@@ -107,12 +111,28 @@ vim.cmd([[
 -- g~       (反转大小写)
 -- gu       (转换为小写)
 -- gU       (转换为大写)
+-- g,       (正向跳转上一次修改位置)
+-- g;       (反向跳转上一次修改位置)
+-- gi       (回到上一次退出插入模式的位置，并进入插入模式)
+-- gp       (粘贴，并且把光标位置移到粘贴的文本结尾)
+
+-- `.       (跳转到上一次修改行的行首)
+-- `^       (跳转到上一次退出插入模式时光标所在的位置)
+-- '.       (跳转到上一次修改行的句首)
+-- '^       (跳转到上一次退出插入模式时光标所在的句首)
+
+-- ""       (使用 unnamed register)
+-- "_       (使用 black hole register)
+-- "0       (使用 recent yard register)
+-- "=       (使用 expression register)
+-- "+       (使用系统剪贴板)
+-- ".       (保存着上次插入的文本)
 
 -- >>       (增加缩进)
 -- >G       (增加缩进到文档末尾)
 -- ==       (自动缩进)
 
--- M        (move cursor to middle)
+-- H/M/L    (move cursor to top/middle/bottom)
 
 -- zz       (reveal center)
 -- zt       (reveal top)
@@ -145,8 +165,7 @@ vim.cmd([[
 
 
 -- Keybindings(insert mode)
--- <C-r>0   (paste text from the register 0)
--- <C-r>=   (访问表达式寄存器)
+-- <C-r>{register}   (paste text from the {register})
 -- <C-h>    (same as backspace)
 -- <C-w>    (删除前一个单词)
 -- <C-u>    (删除至行首)
@@ -157,3 +176,20 @@ vim.cmd([[
 -- Keybindings(visual mode)
 -- gv       (重选上次的高亮选区)
 -- o        (切换高亮选区的活动端)
+
+
+-- Plugins
+  -- nvim-surround
+    -- 修改: cs{old}{new}
+        -- cs'"
+        -- csq"
+        -- csqb
+    -- 删除: ds{old}
+    -- 增加: ys{range}{new}
+    -- 增加(visual mode): S{new}
+    -- 别名: 
+      -- b   ()
+      -- B   {} 
+      -- r   []
+      -- q   '', "",``
+      -- t   <tag></tag>
