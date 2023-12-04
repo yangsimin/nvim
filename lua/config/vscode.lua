@@ -92,6 +92,7 @@ vim.cmd([[
 -- xa/wqa   (save and close all tabs)
 
 -- Keybindings(normal mode)
+-- W/E/B/gE (按字串移动)
 -- ZZ       (save and close active tab)
 
 -- gt       (switch next tab)
