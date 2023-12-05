@@ -92,6 +92,8 @@ vim.cmd([[
 -- xa/wqa     (save and close all tabs)
 -- tabo[nly]  (只保留当前标签页，关闭其他标签页)
 -- changes    (查看修改记录列表)
+-- '<,'>normal @{register}     (对选中的区域，执行 register 录制的宏)
+-- put {register}              (将 register 录制的宏粘贴到当前行的下方 )
 
 -- Keybindings(normal mode)
 -- W/E/B/gE (按字串移动)
