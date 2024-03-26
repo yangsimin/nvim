@@ -86,6 +86,8 @@ vim.cmd([[
   nnoremap <LEADER>rn <Cmd>call VSCodeCall('editor.action.rename')<CR>
   inoremap <C-D> <Cmd>call VSCodeCall('editor.action.addSelectionToNextFindMatch')<CR>
   nnoremap <LEADER>s V$%
+  nnoremap <C-Y> <Cmd>lua require('vscode-neovim').call('editorScroll', {args={to='up',by='line',value=5,revealCursor=true}})<CR>
+  nnoremap <C-E> <Cmd>lua require('vscode-neovim').call('editorScroll', {args={to='down',by='line',value=5,revealCursor=true}})<CR>
 ]])
 
 
