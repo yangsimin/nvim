@@ -3,78 +3,86 @@ vim.cmd.source(HOME .. "/.vimrc")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
-    end,
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        ensure_installed = {
-          "c",
-          "lua",
-          "vim",
-          "vimdoc",
-          "query",
-          "elixir",
-          "heex",
-          "javascript",
-          "html",
-          "vue",
-          "typescript",
-          "tsx",
-        },
-        sync_install = false,
-        highlight = { enable = false },
-        indent = { enable = true },
-        textobjects = {
-          select = {
-            enable = true,
-            lookahead = true,
-            keymaps = {
-              ["af"] = "@function.outer",
-              ["if"] = "@function.inner",
-              ["aa"] = "@parameter.outer",
-              ["ia"] = "@parameter.inner",
-            },
-            include_surrounding_whitespace = true,
-          },
-        },
-      })
-    end,
-  },
-  "nvim-treesitter/nvim-treesitter-textobjects",
-  {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    ---@type Flash.Config
-    opts = {},
+	{
+		"kylechui/nvim-surround",
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
+	},
+	{
+		"XXiaoA/ns-textobject.nvim",
+		config = function()
+			require("ns-textobject").setup({
+				-- config
+			})
+		end,
+	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				ensure_installed = {
+					"c",
+					"lua",
+					"vim",
+					"vimdoc",
+					"query",
+					"elixir",
+					"heex",
+					"javascript",
+					"html",
+					"vue",
+					"typescript",
+					"tsx",
+				},
+				sync_install = false,
+				highlight = { enable = false },
+				indent = { enable = true },
+				textobjects = {
+					select = {
+						enable = true,
+						lookahead = true,
+						keymaps = {
+							["af"] = "@function.outer",
+							["if"] = "@function.inner",
+							["aa"] = "@parameter.outer",
+							["ia"] = "@parameter.inner",
+						},
+						include_surrounding_whitespace = true,
+					},
+				},
+			})
+		end,
+	},
+	"nvim-treesitter/nvim-treesitter-textobjects",
+	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		---@type Flash.Config
+		opts = {},
     -- stylua: ignore
     keys = {
       { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
       { "/", mode = { "n", "x", "o" }, function() require("flash").jump({ pattern = vim.fn.expand("<cword>") }) end, desc = "Search Current" },
     },
-  },
+	},
 })
 
 vim.cmd([[
@@ -185,17 +193,17 @@ vim.cmd([[
 
 
 -- Plugins
-  -- nvim-surround
-    -- 修改: cs{old}{new}
-        -- cs'"
-        -- csq"
-        -- csqb
-    -- 删除: ds{old}
-    -- 增加: ys{range}{new}
-    -- 增加(visual mode): S{new}
-    -- 别名: 
-      -- b   ()
-      -- B   {} 
-      -- r   []
-      -- q   '', "",``
-      -- t   <tag></tag>
+-- nvim-surround
+-- 修改: cs{old}{new}
+-- cs'"
+-- csq"
+-- csqb
+-- 删除: ds{old}
+-- 增加: ys{range}{new}
+-- 增加(visual mode): S{new}
+-- 别名:
+-- b   ()
+-- B   {}
+-- r   []
+-- q   '', "",``
+-- t   <tag></tag>
