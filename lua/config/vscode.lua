@@ -100,6 +100,9 @@ vim.cmd([[
   nnoremap <LEADER>s V$%
   nnoremap <C-Y> <Cmd>lua require('vscode-neovim').call('editorScroll', {args={to='up',by='line',value=5,revealCursor=true}})<CR>
   nnoremap <C-E> <Cmd>lua require('vscode-neovim').call('editorScroll', {args={to='down',by='line',value=5,revealCursor=true}})<CR>
+  nmap j gj
+  nmap k gk
+  nnoremap zo <Cmd>lua require('vscode-neovim').call('editor.toggleFold')<CR>
 ]])
 
 
