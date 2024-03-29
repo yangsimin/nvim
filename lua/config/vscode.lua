@@ -25,11 +25,15 @@ require("lazy").setup({
 			})
 		end,
 	},
-	{
+  {
 		"XXiaoA/ns-textobject.nvim",
 		config = function()
 			require("ns-textobject").setup({
-				-- config
+				disable_builtin_mapping = {
+					enabled = true,
+					-- list of char which shouldn't mapping by auto_mapping
+					chars = { "a" },
+				},
 			})
 		end,
 	},
@@ -207,3 +211,4 @@ vim.cmd([[
 -- r   []
 -- q   '', "",``
 -- t   <tag></tag>
+-- s  all
