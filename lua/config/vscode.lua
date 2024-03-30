@@ -90,8 +90,8 @@ require("lazy").setup({
 })
 
 vim.cmd([[
-  xnoremap gc <Plug>VSCodeCommentarygv
-  nnoremap gc <Plug>VSCodeCommentarygv
+  xnoremap gc <Plug>VSCodeCommentary'>
+  nnoremap gc <Plug>VSCodeCommentary'>
   nnoremap gcc <Plug>VSCodeCommentaryLine
   xnoremap y y'>
   nnoremap <LEADER><ESC> :nohlsearch<CR>
