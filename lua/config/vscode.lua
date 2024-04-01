@@ -72,6 +72,15 @@ require("lazy").setup({
             include_surrounding_whitespace = true,
           },
         },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = "<C-K>", -- set to `false` to disable one of the mappings
+            node_incremental = "<C-K>",
+            scope_incremental = false,
+            node_decremental = "<C-J>",
+          },
+        },
       })
     end,
   },
@@ -90,19 +99,21 @@ require("lazy").setup({
 })
 
 vim.cmd([[
+  nmap j gj
+  nmap k gk
   xnoremap gc <Plug>VSCodeCommentary'>
   nnoremap gc <Plug>VSCodeCommentary'>
   nnoremap gcc <Plug>VSCodeCommentaryLine
   xnoremap y y'>
-  nnoremap <LEADER><ESC> :nohlsearch<CR>
-  nnoremap <LEADER>rn <Cmd>call VSCodeCall('editor.action.rename')<CR>
+  nnoremap zo <Cmd>lua require('vscode-neovim').call('editor.toggleFold')<CR>
   inoremap <C-D> <Cmd>call VSCodeCall('editor.action.addSelectionToNextFindMatch')<CR>
-  nnoremap <LEADER>s V$%
   nnoremap <C-Y> <Cmd>lua require('vscode-neovim').call('editorScroll', {args={to='up',by='line',value=5,revealCursor=true}})<CR>
   nnoremap <C-E> <Cmd>lua require('vscode-neovim').call('editorScroll', {args={to='down',by='line',value=5,revealCursor=true}})<CR>
-  nmap j gj
-  nmap k gk
-  nnoremap zo <Cmd>lua require('vscode-neovim').call('editor.toggleFold')<CR>
+  nnoremap <LEADER><ESC> :nohlsearch<CR>
+  nnoremap <LEADER>rn <Cmd>call VSCodeCall('editor.action.rename')<CR>
+  nnoremap <LEADER>s V$%
+  nnoremap <LEADER>e <Cmd>lua require('vscode-neovim').call('workbench.action.toggleSidebarVisibility')<CR>
+  nnoremap <LEADER>fb <Cmd>lua require('vscode-neovim').call('editor.action.jumpToBracket')<CR>
 ]])
 
 -- Commands(:)
@@ -196,18 +207,18 @@ vim.cmd([[
 -- o        (切换高亮选区的活动端)
 
 -- Plugins
-  -- nvim-surround
-    -- 修改: cs{old}{new}
-        -- cs'"
-        -- csq"
-        -- csqb
-    -- 删除: ds{old}
-    -- 增加: ys{range}{new}
-    -- 增加(visual mode): S{new}
-    -- 别名: 
-      -- b   ()
-      -- B   {} 
-      -- r   []
-      -- q   '', "",``
-      -- t   <tag></tag>
-      -- s  all
+-- nvim-surround
+-- 修改: cs{old}{new}
+-- cs'"
+-- csq"
+-- csqb
+-- 删除: ds{old}
+-- 增加: ys{range}{new}
+-- 增加(visual mode): S{new}
+-- 别名:
+-- b   ()
+-- B   {}
+-- r   []
+-- q   '', "",``
+-- t   <tag></tag>
+-- s  all
