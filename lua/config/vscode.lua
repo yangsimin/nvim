@@ -72,15 +72,6 @@ require("lazy").setup({
             include_surrounding_whitespace = true,
           },
         },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            init_selection = "<C-K>", -- set to `false` to disable one of the mappings
-            node_incremental = "<C-K>",
-            scope_incremental = false,
-            node_decremental = "<C-J>",
-          },
-        },
       })
     end,
   },
