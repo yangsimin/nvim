@@ -73,7 +73,7 @@ require("lazy").setup({
           },
         },
         incremental_selection = {
-          enable = false,
+          enable = true,
           keymaps = {
             init_selection = "<C-K>", -- set to `false` to disable one of the mappings
             node_incremental = "<C-K>",
