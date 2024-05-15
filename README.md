@@ -82,6 +82,13 @@
 **Keybindings(visual mode)**
 | gv                       | 重选上次的高亮选区                           |
 | o                        | 切换高亮选区的活动端                         |
+**Text Objects**
+| dip                      | 删除段落                           |
+| dgn                      | 删除下一个搜索匹配项                        |
+** Motion **
+| dip                      | 删除段落                           |
+| dgn                      | 删除下一个搜索匹配项                        |
+
 
 ### Plugins
 * nvim-surround
